@@ -69,7 +69,7 @@ public final class DlgCariObat2 extends javax.swing.JDialog {
     private String[] no,kodebarang,namabarang,kodesatuan,letakbarang,namajenis,industri,aturan,kategori,golongan,nobatch,nofaktur,kadaluarsa;
     private String signa1="1",signa2="1",kdObatSK="",requestJson="",nokunjungan="",URL="",otorisasi,sql="",no_batchcari="", tgl_kadaluarsacari="", 
                    no_fakturcari="",aktifkanbatch="no",aktifpcare="no",noresep="",Suspen_Piutang_Obat_Ranap="",Obat_Ranap="",HPP_Obat_Rawat_Inap="",
-                   Persediaan_Obat_Rawat_Inap="",hppfarmasi="";
+                   Persediaan_Obat_Rawat_Inap="",hppfarmasi="",depoaktifralan="";
     private WarnaTable2 warna=new WarnaTable2();
     private DlgCariBangsal caribangsal=new DlgCariBangsal(null,false);
     public DlgCariAturanPakai aturanpakai=new DlgCariAturanPakai(null,false);
@@ -2610,7 +2610,10 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     }
     
     public void isCek(){  
-        kdgudang.setText(akses.getkdbangsal());
+        //Set Default depo farmasi Pemberian Obat RSUD dr. Haryoto
+        kdgudang.setText(depoaktifralan = koneksiDB.DEPOAKTIFRALAN());
+        
+        //kdgudang.setText(akses.getkdbangsal());
         Sequel.cariIsi("select bangsal.nm_bangsal from bangsal where bangsal.kd_bangsal=?",nmgudang,kdgudang.getText());  
         BtnTambah.setEnabled(akses.getobat());
         TCari.requestFocus();

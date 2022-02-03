@@ -687,6 +687,7 @@ public final class DlgPeriksaRadiologi extends javax.swing.JDialog {
         PanelInput.add(jLabel12);
         jLabel12.setBounds(402, 42, 60, 23);
 
+        KdPtg.setEditable(false);
         KdPtg.setName("KdPtg"); // NOI18N
         KdPtg.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {
@@ -714,7 +715,7 @@ public final class DlgPeriksaRadiologi extends javax.swing.JDialog {
         NmPtg.setBounds(546, 42, 249, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "07-06-2020" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "20-01-2022" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -1568,7 +1569,7 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
     // End of variables declaration//GEN-END:variables
     
     
-    public void tampil() {         
+    public void tampil() {     
         try{
             jml=0;
             for(i=0;i<tbPemeriksaan.getRowCount();i++){
@@ -1986,6 +1987,9 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         Sequel.cariIsi("select kd_dokter from reg_periksa where no_rawat=? ",KodePerujuk,TNoRw.getText());
         Sequel.cariIsi("select nm_dokter from dokter where kd_dokter=? ",NmPerujuk,KodePerujuk.getText());
         isPsien();
+        if(noorder.equals("")){
+           isRawat();
+        }
         isReset();
     }
     
@@ -1993,9 +1997,11 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
         if(akses.getjml2()>=1){
             KdPtg.setText(akses.getkode());
             Sequel.cariIsi("select nama from petugas where nip=?", NmPtg,KdPtg.getText());
+            btnPetugas.setEnabled(false);
         }else{
             KdPtg.setText("");
             NmPtg.setText("");
+            btnPetugas.setEnabled(true);
         }
         BtnSimpan.setEnabled(akses.getperiksa_radiologi());
         BtnTambahPeriksa.setEnabled(akses.gettarif_radiologi());
@@ -2317,6 +2323,10 @@ private void ChkJlnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:
                     Sequel.mengedit("permintaan_radiologi","noorder=?","tgl_hasil=?,jam_hasil=?",3,new String[]{
                         Valid.SetTgl(Tanggal.getSelectedItem()+""),CmbJam.getSelectedItem()+":"+CmbMenit.getSelectedItem()+":"+CmbDetik.getSelectedItem(),noorder
                     });
+                    if(status.equals("Ralan")){
+                        Sequel.queryu("delete from antriradiologi2");
+                        Sequel.queryu("insert into antriradiologi2 values('1')");
+                    }
                 }
                 
                 if(status.equals("Ranap")){

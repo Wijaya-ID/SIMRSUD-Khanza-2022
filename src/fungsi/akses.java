@@ -170,7 +170,9 @@ public final class akses {
             bpjs_sep_internal=false,bpjs_klaim_jasa_raharja=false,bpjs_daftar_finger_print=false,bpjs_rujukan_khusus=false,pemeliharaan_gedung=false,
             grafik_perbaikan_inventaris_pertanggal=false,grafik_perbaikan_inventaris_perbulan=false,grafik_perbaikan_inventaris_pertahun=false,
             grafik_perbaikan_inventaris_perpelaksana_status=false,penilaian_mcu=false,peminjam_piutang=false,piutang_lainlain=false,cara_bayar=false,
-            audit_kepatuhan_apd=false,bpjs_task_id=false,bayar_piutang_lain=false,pembayaran_akun_bayar4=false,stok_akhir_farmasi_pertanggal=false;
+            audit_kepatuhan_apd=false,bpjs_task_id=false,bayar_piutang_lain=false,pembayaran_akun_bayar4=false,stok_akhir_farmasi_pertanggal=false,
+            riwayat_kamar_pasien=false,uji_fungsi_kfr=false,hapus_berkas_digital_perawatan=false,kategori_pengeluaran_harian=false,kategori_pemasukan_lain=false,
+            pembayaran_akun_bayar5=false,ruang_ok=false;
     
     public static void setData(String user, String pass) {
        try {                
@@ -972,6 +974,13 @@ public final class akses {
                         akses.bayar_piutang_lain=true;
                         akses.pembayaran_akun_bayar4=true;
                         akses.stok_akhir_farmasi_pertanggal=true;
+                        akses.riwayat_kamar_pasien=true;
+                        akses.uji_fungsi_kfr=true;
+                        akses.hapus_berkas_digital_perawatan=true;
+                        akses.kategori_pengeluaran_harian=true;
+                        akses.kategori_pemasukan_lain=true;
+                        akses.pembayaran_akun_bayar5=true;
+                        akses.ruang_ok=true;
                     }else if(rs2.getRow()>=1){   
                         rs2.beforeFirst();
                         rs2.next();
@@ -1757,6 +1766,13 @@ public final class akses {
                         akses.bayar_piutang_lain=rs2.getBoolean("bayar_piutang_lain");
                         akses.pembayaran_akun_bayar4=rs2.getBoolean("pembayaran_akun_bayar4");
                         akses.stok_akhir_farmasi_pertanggal=rs2.getBoolean("stok_akhir_farmasi_pertanggal");
+                        akses.riwayat_kamar_pasien=rs2.getBoolean("riwayat_kamar_pasien");
+                        akses.uji_fungsi_kfr=rs2.getBoolean("uji_fungsi_kfr");
+                        akses.hapus_berkas_digital_perawatan=rs2.getBoolean("hapus_berkas_digital_perawatan");
+                        akses.kategori_pengeluaran_harian=rs2.getBoolean("kategori_pengeluaran_harian");
+                        akses.kategori_pemasukan_lain=rs2.getBoolean("kategori_pemasukan_lain");
+                        akses.pembayaran_akun_bayar5=rs2.getBoolean("pembayaran_akun_bayar5");
+                        akses.ruang_ok=rs2.getBoolean("ruang_ok");
                     }else if((rs.getRow()==0)&&(rs2.getRow()==0)){
                         akses.kode="";                  
                         akses.penyakit= false;
@@ -2540,6 +2556,13 @@ public final class akses {
                         akses.bayar_piutang_lain=false;
                         akses.pembayaran_akun_bayar4=false;
                         akses.stok_akhir_farmasi_pertanggal=false;
+                        akses.riwayat_kamar_pasien=false;
+                        akses.uji_fungsi_kfr=false;
+                        akses.hapus_berkas_digital_perawatan=false;
+                        akses.kategori_pengeluaran_harian=false;
+                        akses.kategori_pemasukan_lain=false;
+                        akses.pembayaran_akun_bayar5=false;
+                        akses.ruang_ok=false;
                     }
                 } catch (Exception e) {
                     System.out.println("Notifikasi : "+e);
@@ -3378,4 +3401,11 @@ public final class akses {
     public static boolean getbayar_piutang_lain(){return akses.bayar_piutang_lain;}
     public static boolean getpembayaran_akun_bayar4(){return akses.pembayaran_akun_bayar4;}
     public static boolean getstok_akhir_farmasi_pertanggal(){return akses.stok_akhir_farmasi_pertanggal;}
+    public static boolean getriwayat_kamar_pasien(){return akses.riwayat_kamar_pasien;}
+    public static boolean getuji_fungsi_kfr(){return akses.uji_fungsi_kfr;}
+    public static boolean gethapus_berkas_digital_perawatan(){return akses.hapus_berkas_digital_perawatan;}
+    public static boolean getkategori_pengeluaran_harian(){return akses.kategori_pengeluaran_harian;}
+    public static boolean getkategori_pemasukan_lain(){return akses.kategori_pemasukan_lain;}
+    public static boolean getpembayaran_akun_bayar5(){return akses.pembayaran_akun_bayar5;}
+    public static boolean getruang_ok(){return akses.ruang_ok;}
 }   

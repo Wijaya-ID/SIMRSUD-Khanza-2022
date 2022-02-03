@@ -36,7 +36,7 @@ public class DlgPiutang extends javax.swing.JDialog {
     private double ttljual=0,stok,jumlah;
     private PreparedStatement ps;
     private ResultSet rs;
-    private String aktifkanbatch="no",pilihanetiket;
+    private String aktifkanbatch="no",depoaktif="",pilihanetiket;
     private boolean sukses=true;
     private DlgCariAturanPakai aturan_pakai=new DlgCariAturanPakai(null,false);
 
@@ -1881,7 +1881,10 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
         autoNomor();
         Ongkir.setText("0");
         UangMuka.setText("0");
-        Sequel.cariIsi("select kd_bangsal from set_lokasi",kdgudang);
+        //Sequel.cariIsi("select kd_bangsal from set_lokasi",kdgudang);
+        
+        //Penambahan Default Depo Farmasi Piutang RSUD dr. Haryoto
+        kdgudang.setText(depoaktif = koneksiDB.DEPOAKTIFRALAN());
         Sequel.cariIsi("select nm_bangsal from bangsal where kd_bangsal=?",nmgudang,kdgudang.getText());
         if(akses.getjml2()>=1){
             kdptg.setEditable(false);

@@ -42,7 +42,7 @@ public class DlgPenjualan extends javax.swing.JDialog {
     private int jml=0,i=0,row,kolom=0,reply,index;
     public DlgCariAturanPakai aturan_pakai=new DlgCariAturanPakai(null,false);
     private String verifikasi_penjualan_di_kasir="",Penjualan_Obat="",HPP_Obat_Jual_Bebas="",Persediaan_Obat_Jual_Bebas="",
-            status="Belum Dibayar",pilihanetiket="",hppfarmasi="",kode_akun_bayar="";
+            status="Belum Dibayar",pilihanetiket="",hppfarmasi="",kode_akun_bayar="",depoaktif="";
     private PreparedStatement ps,psstok,pscaribatch;
     private ResultSet rs,rsstok;
     private String[] no,kodebarang,kandungan,namabarang,kategori,satuan,aturanpakai,nobatch,nofaktur,kadaluarsa;
@@ -3598,11 +3598,15 @@ private void BtnGudangActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIR
     public void isCek(){
         autoNomor();
         TCari.requestFocus();
-        Sequel.cariIsi("select kd_bangsal from set_lokasi",kdgudang);
+        //Sequel.cariIsi("select kd_bangsal from set_lokasi",kdgudang);
+        
+        //Set Default depo farmasi Penjualan RSUD dr. Haryoto
+        kdgudang.setText(depoaktif = koneksiDB.DEPOAKTIFRALAN());
         Sequel.cariIsi("select nm_bangsal from bangsal where kd_bangsal=?",nmgudang,kdgudang.getText());
         if(akses.getjml2()>=1){
             kdptg.setEditable(false);
             BtnPtg.setEnabled(false);
+            BtnGudang.setEnabled(false);
             BtnSimpan.setEnabled(akses.getpenjualan_obat());
             BtnTambah.setEnabled(akses.getobat());
             kdptg.setText(akses.getkode());

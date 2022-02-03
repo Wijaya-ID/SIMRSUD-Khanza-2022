@@ -149,11 +149,11 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
         tbObat.setDefaultRenderer(Object.class, new WarnaTable());
 
         TNoRw.setDocument(new batasInput((byte)17).getKata(TNoRw));
-        Keluhan.setDocument(new batasInput((int)1000).getKata(Keluhan));
-        JalannyaPenyakit.setDocument(new batasInput((int)1000).getKata(JalannyaPenyakit));
-        PemeriksaanPenunjang.setDocument(new batasInput((int)1000).getKata(PemeriksaanPenunjang));
-        HasilLaborat.setDocument(new batasInput((int)1000).getKata(HasilLaborat));
-        Obat2an.setDocument(new batasInput((int)1000).getKata(Obat2an));
+        Keluhan.setDocument(new batasInput((int)2000).getKata(Keluhan));
+        JalannyaPenyakit.setDocument(new batasInput((int)2000).getKata(JalannyaPenyakit));
+        PemeriksaanPenunjang.setDocument(new batasInput((int)2000).getKata(PemeriksaanPenunjang));
+        HasilLaborat.setDocument(new batasInput((int)2000).getKata(HasilLaborat));
+        Obat2an.setDocument(new batasInput((int)2000).getKata(Obat2an));
         DiagnosaUtama.setDocument(new batasInput((int)80).getKata(DiagnosaUtama));
         DiagnosaSekunder1.setDocument(new batasInput((int)80).getKata(DiagnosaSekunder1));
         DiagnosaSekunder2.setDocument(new batasInput((int)80).getKata(DiagnosaSekunder2));
@@ -1773,7 +1773,11 @@ public final class RMDataResumePasien extends javax.swing.JDialog {
                     DlgBerkasRawat berkas=new DlgBerkasRawat(null,true);
                     berkas.setJudul("::[ Berkas Digital Perawatan ]::","berkasrawat/pages");
                     try {
-                        berkas.loadURL("http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/"+"berkasrawat/login2.php?act=login&usere=admin&passwordte=akusayangsamakamu&no_rawat="+tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());
+                        if(akses.gethapus_berkas_digital_perawatan()==true){
+                            berkas.loadURL("http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/"+"berkasrawat/login2.php?act=login&usere=admin&passwordte=akusayangsamakamu&no_rawat="+tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());
+                        }else{
+                            berkas.loadURL("http://"+koneksiDB.HOSTHYBRIDWEB()+":"+koneksiDB.PORTWEB()+"/"+koneksiDB.HYBRIDWEB()+"/"+"berkasrawat/login2nonhapus.php?act=login&usere=admin&passwordte=akusayangsamakamu&no_rawat="+tbObat.getValueAt(tbObat.getSelectedRow(),2).toString());
+                        }   
                     } catch (Exception ex) {
                         System.out.println("Notifikasi : "+ex);
                     }
