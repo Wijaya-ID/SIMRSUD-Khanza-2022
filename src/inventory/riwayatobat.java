@@ -88,6 +88,10 @@ public class riwayatobat {
             System.out.println("Notifikasi : "+ex);  
         }            
    }
+
+    void catatRiwayat(String toString, double SetAngka, int i, String opname, String kode, String text, String simpan, String string, String string0) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    }
 }
     
 
