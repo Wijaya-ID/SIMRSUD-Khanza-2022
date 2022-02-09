@@ -641,6 +641,7 @@ import laporan.DlgDaftarPasienRanap;
 import laporan.DlgDaftarPasienRanapTNI;
 import laporan.DlgDataKlasifikasiPasienRanap;
 import laporan.DlgDemografiUmurKunjungan;
+import laporan.DlgKLPCM;
 import laporan.DlgDosisRadiologi;
 import rekammedis.RMDataResumePasien;
 import laporan.DlgHarianHAIs2;
@@ -1407,6 +1408,7 @@ public class frmUtama extends javax.swing.JFrame {
         btnLimbahDomestik = new widget.ButtonBig();
         btnGrafikLimbahDomestikPerTanggal = new widget.ButtonBig();
         btnLaboratoriumPA = new widget.ButtonBig();
+        btnKLPCM = new widget.ButtonBig();
         internalFrame1 = new widget.InternalFrame();
         BtnMenu = new widget.ButtonBig();
         jSeparator4 = new javax.swing.JSeparator();
@@ -6740,6 +6742,18 @@ public class frmUtama extends javax.swing.JFrame {
         btnLaboratoriumPA.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnLaboratoriumPAActionPerformed(evt);
+            }
+        });
+
+        btnKLPCM.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/1360487111_stock_paste.png"))); // NOI18N
+        btnKLPCM.setText("KLPCM");
+        btnKLPCM.setToolTipText("");
+        btnKLPCM.setIconTextGap(0);
+        btnKLPCM.setName("btnKLPCM"); // NOI18N
+        btnKLPCM.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnKLPCM.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnKLPCMActionPerformed(evt);
             }
         });
 
@@ -14137,6 +14151,17 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_MnInfoLaborat2ActionPerformed
 
+    private void btnKLPCMActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnKLPCMActionPerformed
+        isTutup();
+        DlgHome.dispose();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgKLPCM aplikasi=new DlgKLPCM(this,false);
+        aplikasi.setSize(PanelUtama.getWidth(), PanelUtama.getHeight());
+        aplikasi.setLocationRelativeTo(PanelUtama);
+        aplikasi.setVisible(true);
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_btnKLPCMActionPerformed
+
     private void btnKategoriPerpustakaanActionPerformed(java.awt.event.ActionEvent evt) {
         isTutup();
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -18250,6 +18275,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
     private widget.ButtonBig btnJumlahMacamDiet;
     private widget.ButtonBig btnJumlahPorsiDiet;
     private widget.ButtonBig btnJurnalHarian;
+    private widget.ButtonBig btnKLPCM;
     private widget.ButtonBig btnKadaluarsaBatch;
     private widget.ButtonBig btnKamar;
     private widget.ButtonBig btnKamarInap;
@@ -20394,6 +20420,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             
             if(akses.getdemografi_umur_kunjungan()==true){  
                 Panelmenu.add(btnDemografiUmurKunjungan);                 
+                jmlmenu++;
+            }
+            
+            if(akses.getdemografi_umur_kunjungan()==true){  
+                Panelmenu.add(btnKLPCM);                 
                 jmlmenu++;
             }
         }else if(cmbMenu.getSelectedIndex()==9){   
@@ -24324,6 +24355,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         
         if(akses.getdemografi_umur_kunjungan()==true){  
             Panelmenu.add(btnDemografiUmurKunjungan);                 
+            jmlmenu++;
+        }
+        
+        if(akses.getdemografi_umur_kunjungan()==true){  
+            Panelmenu.add(btnKLPCM);                 
             jmlmenu++;
         }
 
@@ -28895,6 +28931,13 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         if(akses.getdemografi_umur_kunjungan()==true){  
             if(btnDemografiUmurKunjungan.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
                 Panelmenu.add(btnDemografiUmurKunjungan);                 
+                jmlmenu++;
+            }                
+        }
+        
+        if(akses.getdemografi_umur_kunjungan()==true){  
+            if(btnKLPCM.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnKLPCM);                 
                 jmlmenu++;
             }                
         }
