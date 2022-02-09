@@ -559,6 +559,7 @@ import inventory.DlgSatuan;
 import inventory.DlgSirkulasiBarang4;
 import inventory.DlgSirkulasiBarang5;
 import inventory.DlgSisaStok;
+import inventory.DlgSisaStok2;
 import inventory.InventoryCariResepLuar;
 import inventory.InventoryHibahObatBHP;
 import inventory.InventoryPenggunaanBHPOK;
@@ -1409,6 +1410,7 @@ public class frmUtama extends javax.swing.JFrame {
         btnGrafikLimbahDomestikPerTanggal = new widget.ButtonBig();
         btnLaboratoriumPA = new widget.ButtonBig();
         btnKLPCM = new widget.ButtonBig();
+        btnSisaStok2 = new widget.ButtonBig();
         internalFrame1 = new widget.InternalFrame();
         BtnMenu = new widget.ButtonBig();
         jSeparator4 = new javax.swing.JSeparator();
@@ -1702,7 +1704,7 @@ public class frmUtama extends javax.swing.JFrame {
 
         tanggal.setEditable(false);
         tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "03/02/2022" }));
+        tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "09/02/2022" }));
         tanggal.setDisplayFormat("dd/MM/yyyy");
         tanggal.setName("tanggal"); // NOI18N
         tanggal.setOpaque(false);
@@ -6754,6 +6756,17 @@ public class frmUtama extends javax.swing.JFrame {
         btnKLPCM.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 btnKLPCMActionPerformed(evt);
+            }
+        });
+
+        btnSisaStok2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/48x48/iconfinder_icon-62-document-table_314903.png"))); // NOI18N
+        btnSisaStok2.setText("Sisa Stok 2");
+        btnSisaStok2.setIconTextGap(0);
+        btnSisaStok2.setName("btnSisaStok2"); // NOI18N
+        btnSisaStok2.setPreferredSize(new java.awt.Dimension(200, 90));
+        btnSisaStok2.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                btnSisaStok2ActionPerformed(evt);
             }
         });
 
@@ -14162,6 +14175,19 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         this.setCursor(Cursor.getDefaultCursor());
     }//GEN-LAST:event_btnKLPCMActionPerformed
 
+    private void btnSisaStok2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnSisaStok2ActionPerformed
+        // TODO add your handling code here:
+        isTutup();
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+        DlgSisaStok2 form=new DlgSisaStok2(this,false);
+        form.isCek();
+        form.setSize(PanelUtama.getWidth(),PanelUtama.getHeight());
+        form.setLocationRelativeTo(PanelUtama);
+        form.setVisible(true);
+        DlgHome.dispose();
+        this.setCursor(Cursor.getDefaultCursor());
+    }//GEN-LAST:event_btnSisaStok2ActionPerformed
+
     private void btnKategoriPerpustakaanActionPerformed(java.awt.event.ActionEvent evt) {
         isTutup();
         this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
@@ -18510,6 +18536,7 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
     private widget.ButtonBig btnSirkulasiInventaris;
     private widget.ButtonBig btnSirkulasiNonMedis;
     private widget.ButtonBig btnSisaStok;
+    private widget.ButtonBig btnSisaStok2;
     private widget.ButtonBig btnStokKeluarIPSRSPerTanggal;
     private widget.ButtonBig btnStokKeluarMedis;
     private widget.ButtonBig btnStokObatPasien;
@@ -19431,6 +19458,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
             
             if(akses.getsisa_stok()==true){
                 Panelmenu.add(btnSisaStok);
+                jmlmenu++;
+            }
+            
+            if(akses.getsisa_stok()==true){
+                Panelmenu.add(btnSisaStok2);
                 jmlmenu++;
             }
             
@@ -23376,6 +23408,11 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         
         if(akses.getsisa_stok()==true){
             Panelmenu.add(btnSisaStok);
+            jmlmenu++;
+        }
+        
+        if(akses.getsisa_stok()==true){
+            Panelmenu.add(btnSisaStok2);
             jmlmenu++;
         }
 
@@ -27560,6 +27597,13 @@ private void MnGantiPasswordBtnLogActionPerformed(java.awt.event.ActionEvent evt
         if(akses.getsisa_stok()==true){
             if(btnSisaStok.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
                 Panelmenu.add(btnSisaStok);
+                jmlmenu++;
+            }                
+        }
+        
+        if(akses.getsisa_stok()==true){
+            if(btnSisaStok2.getText().toLowerCase().trim().contains(TCari.getText().toLowerCase().trim())){
+                Panelmenu.add(btnSisaStok2);
                 jmlmenu++;
             }                
         }
