@@ -516,7 +516,7 @@ public final class DlgPermintaanLaboratorium extends javax.swing.JDialog {
         jLabel9.setBounds(0, 40, 92, 23);
 
         Tanggal.setForeground(new java.awt.Color(50, 70, 50));
-        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-01-2021" }));
+        Tanggal.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-02-2022" }));
         Tanggal.setDisplayFormat("dd-MM-yyyy");
         Tanggal.setName("Tanggal"); // NOI18N
         Tanggal.setOpaque(false);
@@ -631,7 +631,6 @@ public final class DlgPermintaanLaboratorium extends javax.swing.JDialog {
         TabRawat.setBackground(new java.awt.Color(255, 255, 253));
         TabRawat.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(241, 246, 236)));
         TabRawat.setForeground(new java.awt.Color(50, 50, 50));
-        TabRawat.setFont(new java.awt.Font("Tahoma", 0, 11)); // NOI18N
         TabRawat.setName("TabRawat"); // NOI18N
         TabRawat.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
@@ -865,7 +864,7 @@ public final class DlgPermintaanLaboratorium extends javax.swing.JDialog {
         jLabel17.setBounds(235, 10, 120, 23);
 
         TanggalPA.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalPA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-01-2021" }));
+        TanggalPA.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-02-2022" }));
         TanggalPA.setDisplayFormat("dd-MM-yyyy");
         TanggalPA.setName("TanggalPA"); // NOI18N
         TanggalPA.setOpaque(false);
@@ -908,7 +907,7 @@ public final class DlgPermintaanLaboratorium extends javax.swing.JDialog {
         DiagnosaPA.setBounds(432, 100, 340, 23);
 
         TanggalBahan.setForeground(new java.awt.Color(50, 70, 50));
-        TanggalBahan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "23-01-2021" }));
+        TanggalBahan.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "17-02-2022" }));
         TanggalBahan.setDisplayFormat("dd-MM-yyyy");
         TanggalBahan.setName("TanggalBahan"); // NOI18N
         TanggalBahan.setOpaque(false);
@@ -1401,14 +1400,25 @@ private void BtnHapusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRS
     }//GEN-LAST:event_TNoPermintaanKeyPressed
 
     private void BtnCariActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_BtnCariActionPerformed
-        this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
-        DlgCariPermintaanLab form=new DlgCariPermintaanLab(null,false);
-        form.isCek();
-        form.setPasien(TNoRw.getText());
-        form.setSize(this.getWidth(),this.getHeight());
-        form.setLocationRelativeTo(this);
-        form.setVisible(true);
-        this.setCursor(Cursor.getDefaultCursor());
+        if(TabRawat.getSelectedIndex()==0){
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DlgCariPermintaanLab form=new DlgCariPermintaanLab(null,false);
+            form.isCek();
+            form.setPasien(TNoRw.getText());
+            form.setSize(this.getWidth(),this.getHeight());
+            form.setLocationRelativeTo(this);
+            form.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }else if(TabRawat.getSelectedIndex()==1){
+            this.setCursor(Cursor.getPredefinedCursor(Cursor.WAIT_CURSOR));
+            DlgCariPermintaanLabPA form=new DlgCariPermintaanLabPA(null,false);
+            form.isCek();
+            form.setPasien(TNoRw.getText());
+            form.setSize(this.getWidth(),this.getHeight());
+            form.setLocationRelativeTo(this);
+            form.setVisible(true);
+            this.setCursor(Cursor.getDefaultCursor());
+        }  
     }//GEN-LAST:event_BtnCariActionPerformed
 
     private void BtnCariKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_BtnCariKeyPressed
