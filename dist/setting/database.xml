@@ -26,14 +26,14 @@
     <entry key="ALARMPENGADUANPASIEN">yes</entry>
     <entry key="ALARMPERMINTAANRANAP">yes</entry>
     <entry key="MENUTRANSPARAN">yes</entry>
-    <entry key="URLAPIBPJS">https://apijkn.bpjs-kesehatan.go.id/vclaim-rest</entry>
-    <entry key="SECRETKEYAPIBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="CONSIDAPIBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="USERKEYAPIBPJS">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="URLAPIAPLICARE">https://new-api.bpjs-kesehatan.go.id/aplicaresws</entry>
-    <entry key="SECRETKEYAPIAPLICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="CONSIDAPIAPLICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
-    <entry key="USERKEYAPIAPLICARE">l4nh5eVYrLAER/I2A4b3Tw==</entry>
+    <entry key="URLAPIBPJS">https://apijkn-dev.bpjs-kesehatan.go.id/vclaim-rest-dev/</entry>
+    <entry key="SECRETKEYAPIBPJS">nwGSAo8uh5BDAeVEsQWTlQ==</entry>
+    <entry key="CONSIDAPIBPJS">vFMZTFbCGHD0nF9g8/65yA==</entry>
+    <entry key="USERKEYAPIBPJS">kzMJtqvHxROGX9+OJeZKARP7fffAvS3wbPRnj3znep++6y1ueOWhbuWCAwB6tGiR</entry>
+    <entry key="URLAPIAPLICARE">https://dvlp.bpjs-kesehatan.go.id:8888/aplicaresws/</entry>
+    <entry key="SECRETKEYAPIAPLICARE">nwGSAo8uh5BDAeVEsQWTlQ==</entry>
+    <entry key="CONSIDAPIAPLICARE">vFMZTFbCGHD0nF9g8/65yA==</entry>
+    <entry key="USERKEYAPIAPLICARE">kzMJtqvHxROGX9+OJeZKARP7fffAvS3wbPRnj3znep++6y1ueOWhbuWCAwB6tGiR</entry>
     <entry key="URLAPIMOBILEJKN">https://apijkn-dev.bpjs-kesehatan.go.id/antreanrs_dev</entry>
     <entry key="SECRETKEYAPIMOBILEJKN">nwGSAo8uh5BDAeVEsQWTlQ==</entry>
     <entry key="CONSIDAPIMOBILEJKN">vFMZTFbCGHD0nF9g8/65yA==</entry>
