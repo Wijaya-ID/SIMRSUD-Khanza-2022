@@ -377,7 +377,7 @@ public class DlgJamDietPasien extends javax.swing.JDialog {
         panelBiasa1.add(jLabel9);
         jLabel9.setBounds(336, 12, 100, 23);
 
-        cmbWaktu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pagi", "Pagi2", "Pagi3", "Siang", "Siang2", "Siang3", "Sore", "Sore2", "Sore3", "Malam", "Malam2", "Malam3" }));
+        cmbWaktu.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Pagi", "Pagi2", "Pagi3", "SnackPagi", "Siang", "Siang2", "Siang3", "SnackSiang", "Sore", "Sore2", "Sore3", "SnackSore", "Malam", "Malam2", "Malam3", "SnackMalam" }));
         cmbWaktu.setName("cmbWaktu"); // NOI18N
         cmbWaktu.addKeyListener(new java.awt.event.KeyAdapter() {
             public void keyPressed(java.awt.event.KeyEvent evt) {

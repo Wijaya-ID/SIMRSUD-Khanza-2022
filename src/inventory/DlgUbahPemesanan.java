@@ -1564,7 +1564,7 @@ private void kdgudangKeyPressed(java.awt.event.KeyEvent evt) {//GEN-FIRST:event_
         }
         TCari.requestFocus();
         if(ppn>0){
-            tppn.setText("10");
+            tppn.setText("11");
         }
     }
 
