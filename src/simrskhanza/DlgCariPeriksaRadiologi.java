@@ -546,6 +546,7 @@ public class DlgCariPeriksaRadiologi extends javax.swing.JDialog {
 
         HasilPeriksa.setColumns(20);
         HasilPeriksa.setRows(5);
+        HasilPeriksa.setFont(new java.awt.Font("Tahoma", 0, 14)); // NOI18N
         HasilPeriksa.setName("HasilPeriksa"); // NOI18N
         Scroll3.setViewportView(HasilPeriksa);
 

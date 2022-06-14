@@ -38,7 +38,6 @@
                   <Color PropertyName="color" blue="eb" green="f5" red="f0" type="rgb"/>
                 </LineBorder>
               </Border>
-              <Font PropertyName="font" name="Tahoma" size="11" style="0"/>
               <Color PropertyName="color" blue="32" green="32" red="32" type="rgb"/>
             </TitledBorder>
           </Border>
@@ -377,19 +376,23 @@
             <Component class="widget.ComboBox" name="cmbWaktu">
               <Properties>
                 <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-                  <StringArray count="12">
+                  <StringArray count="16">
                     <StringItem index="0" value="Pagi"/>
                     <StringItem index="1" value="Pagi2"/>
                     <StringItem index="2" value="Pagi3"/>
-                    <StringItem index="3" value="Siang"/>
-                    <StringItem index="4" value="Siang2"/>
-                    <StringItem index="5" value="Siang3"/>
-                    <StringItem index="6" value="Sore"/>
-                    <StringItem index="7" value="Sore2"/>
-                    <StringItem index="8" value="Sore3"/>
-                    <StringItem index="9" value="Malam"/>
-                    <StringItem index="10" value="Malam2"/>
-                    <StringItem index="11" value="Malam3"/>
+                    <StringItem index="3" value="SnackPagi"/>
+                    <StringItem index="4" value="Siang"/>
+                    <StringItem index="5" value="Siang2"/>
+                    <StringItem index="6" value="Siang3"/>
+                    <StringItem index="7" value="SnackSiang"/>
+                    <StringItem index="8" value="Sore"/>
+                    <StringItem index="9" value="Sore2"/>
+                    <StringItem index="10" value="Sore3"/>
+                    <StringItem index="11" value="SnackSore"/>
+                    <StringItem index="12" value="Malam"/>
+                    <StringItem index="13" value="Malam2"/>
+                    <StringItem index="14" value="Malam3"/>
+                    <StringItem index="15" value="SnackMalam"/>
                   </StringArray>
                 </Property>
                 <Property name="name" type="java.lang.String" value="cmbWaktu" noResource="true"/>

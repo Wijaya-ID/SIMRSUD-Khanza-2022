@@ -1,1 +1,1 @@
-{"akunpiutang":[{"NamaAkun":"PIUTANG BPJS","KodeRek":"117003","KdPJ":"BPJ"},{"NamaAkun":"PIUTANG UMUM RAWAT INAP","KodeRek":"117002","KdPJ":"A09"},{"NamaAkun":"PIUTANG UMUM RAWAT JALAN","KodeRek":"117001","KdPJ":"A09"}]}
+{"akunpiutang":[{"NamaAkun":"1. PIUTANG UMUM","KodeRek":"117011","KdPJ":"A09"},{"NamaAkun":"2. PIUTANG BPJS","KodeRek":"117003","KdPJ":"BPJ"},{"NamaAkun":"3. PIUTANG JAMSOSTEK","KodeRek":"117009","KdPJ":"A07"},{"NamaAkun":"4. PIUTANG JAMPERSAL","KodeRek":"117010","KdPJ":"A02"},{"NamaAkun":"5. PIUTANG SKTM","KodeRek":"117008","KdPJ":"A01"}]}

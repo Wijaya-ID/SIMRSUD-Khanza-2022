@@ -26,8 +26,8 @@ public class MenuBar extends JMenuBar {
     private final Color dark = new Color(1F, 1F, 0.9F, 0.25F);
     //private Color black = Color.black;
     //private Color warna = Color.magenta.darker().darker().darker().darker();
-    private final Color black = new Color(249,132,239);
-    private final Color warna = new Color(255,111,255);
+    private final Color black = new Color(139,69,19);
+    private final Color warna = new Color(210,105,30);
 
     public MenuBar() {
         super();
